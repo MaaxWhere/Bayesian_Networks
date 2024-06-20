@@ -1,6 +1,6 @@
 ---
-title: "Sample Report - Data Science Capstone"
-author: "Student name"
+title: "Bayesian Network - Data Science Capstone"
+author: "Maxime MARTIN"
 date: '`r Sys.Date()`'
 format:
   html:

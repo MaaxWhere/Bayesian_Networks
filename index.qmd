@@ -17,49 +17,108 @@ editor:
     wrap: 72
 ---
 
-## Introduction
+## Paper review
 
-### What is "mehtod"?
+### 1) A single Bayesian Network classifier for monitoring with unknown classes
 
-This is an introduction to Kernel regression, which is a non-parametric
-estimator that estimates the conditional expectation of two variables
-which is random. The goal of a kernel regression is to discover the
-non-linear relationship between two random variables. To discover the
-non-linear relationship, kernel estimator or kernel smoothing is the
-main method to estimate the curve for non-parametric statistics. In
-kernel estimator, weight function is known as kernel function
-[@efr2008]. Cite this paper [@bro2014principal]. The GEE [@wang2014].
+Authors: A. Stout, A. Cohen, S. Vernon, A. Kobi.
 
-This is my work and I want to add more work...
+Date: 2019
+
+Ref : @ATOUI2019681
+
+The authors investigate the use of BN to create a classifier for
+monitoring systems with unknown classes. They employ Conditional
+Gaussian Networks (CGN), where each node represents either a discrete or
+Gaussian random variable linked to multivariate random variables (RV).
+Their approach involves graphical analysis and a quadratic statistic to
+determine the class of each multivariate observation, utilizing a
+control limit (CL) for classification.
+
+The paper delves into detailed analysis, providing insights into the
+fault detection and diagnosis algorithm, including exclusion criteria.
+Various structures are explored, such as simpler BN structures and their
+association with CGN. The effectiveness of the proposed system is
+demonstrated and evaluated using the complex Tennessee Eastman Process
+(TEP).
+
+Further research is suggested to expand the proposed approach to other
+data-driven CGN, develop new algorithms to handle multiple faults, and
+explore more complex BN structures for integration.
+
+### 2) Application of Bayesian Networks in Reliability Evaluation
+
+Authors: B. Cai, X. Kong, Y. Liu, J. Lin, X. Yuan, H. Xu, R. Ji.
+
+Date: 2019
+
+Ref : @Cai2020
+
+The authors review the use of BN over the past decades, highlighting
+their strengths in modeling complex systems and handling uncertainties.
+Like comprehensive review of the industrial application in reliability
+field. The new feature introduced in the paper is a classification
+framework for BN in reliability evaluation. This
+framework categorises BN based on the objects of reliability evaluation
+(hardware, software), which provides a structured approach to applying
+BN across various industrial contexts. This systematic classification
+helps in better understanding and implementing BN for different
+reliability evaluation tasks, enhancing the practical application and
+effectiveness of BN in real-world scenarios.
+
+The paper discusses various case studies, demonstrating the practical
+implementation of BN in different industrial contexts. However, there
+are some limitations, first the accuracy of BN heavily relies on the
+availability of sufficient and high-quality data, which can be a
+significant constraint. Second, applying BN to very large and complex
+systems poses computational challenges, making it difficult to manage
+and analyse such systems effectively. Third, there is a need for further
+research to integrate BN with other reliability evaluation methods,
+which could enhance their accuracy and applicability in diverse
+industrial contexts. Addressing these limitations is essential for
+improving the practical use of BN in reliability assessments.
+
+### 3) Rational Irrationality: Modeling Climate Change Belief Polarization Using Bayesian Networks
+
+Authors: J. Cook, S. Lewandowsky
+
+Date: 2016
+
+Ref : @JCook2016
+
+This paper is
+
+### 4) Rational Irrationality: Modeling Climate Change Belief Polarization Using Bayesian Networks
+
+Authors: J. Cook, S. Lewandowsky
+
+Date: 2016
+
+Ref :
+
+This paper is
+
+### 5) Rational Irrationality: Modeling Climate Change Belief Polarization Using Bayesian Networks
+
+Authors: J. Cook, S. Lewandowsky
+
+Date: 2016
+
+Ref :
+
+This paper is
 
 ### Related work
 
-This section is going to cover the literature review...
+....
 
 ## Methods
 
-The common non-parametric regression model is
-$Y_i = m(X_i) + \varepsilon_i$, where $Y_i$ can be defined as the sum of
-the regression function value $m(x)$ for $X_i$. Here $m(x)$ is unknown
-and $\varepsilon_i$ some errors. With the help of this definition, we
-can create the estimation for local averaging i.e. $m(x)$ can be
-estimated with the product of $Y_i$ average and $X_i$ is near to $x$. In
-other words, this means that we are discovering the line through the
-data points with the help of surrounding data points. The estimation
-formula is printed below [@R-base]:
-
-$$
-M_n(x) = \sum_{i=1}^{n} W_n (X_i) Y_i  \tag{1}
-$$ $W_n(x)$ is the sum of weights that belongs to all real numbers.
-Weights are positive numbers and small if $X_i$ is far from $x$.
-
-Another equation:
-
-$$
-y_i = \beta_0 + \beta_1 X_1 +\varepsilon_i
-$$
+...
 
 ## Analysis and Results
+
+...
 
 ### Data and Visualization
 

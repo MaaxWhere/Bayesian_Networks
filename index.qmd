@@ -88,21 +88,21 @@ Ref : @JCook2016
 
 This paper is
 
-### 4) Rational Irrationality: Modeling Climate Change Belief Polarization Using Bayesian Networks
+### 4) Quantifying and predicting the Water-Energy-Food-Economy-Society- Environment Nexus based on Bayesian networks - A case study of China
 
-Authors: J. Cook, S. Lewandowsky
+Authors: J. Chai, H. Shi, Q. Lu, Y. Hu
 
-Date: 2016
+Date: 2020
 
-Ref :
+Ref : @CHAI2020120266
 
-This paper is
+This paper is about...
 
-### 5) Rational Irrationality: Modeling Climate Change Belief Polarization Using Bayesian Networks
+### 5) ...
 
-Authors: J. Cook, S. Lewandowsky
+Authors:
 
-Date: 2016
+Date:
 
 Ref :
 

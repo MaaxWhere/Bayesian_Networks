@@ -86,7 +86,38 @@ Date: 2016
 
 Ref : @JCook2016
 
-This paper is
+This paper examines belief polarization, which occurs when two
+individuals interpret the same evidence and update their beliefs in
+opposite directions. This phenomenon represents the irrational aspect of
+the study. The researchers use Bayesian networks to simulate belief
+polarization, representing the rational aspect.
+
+The study focuses on climate change beliefs in two countries, Australia
+and the USA. Four groups of variables were used to illustrate different
+factors: W (worldview/free market support), T (trust in climate
+scientists), H (belief in human-caused global warming), and E (evidence
+from scientific consensus). The relationships between these variables
+are modeled as follows: W-T, W-H, T-E, H-E.
+
+The aim was to determine if individuals with different worldviews (W)
+exhibit belief polarization when presented with scientific evidence,
+considering varying levels of trust in climate scientists and belief in
+human-caused global warming.
+
+Data analysis was conducted using R, modeling ANOVA tests for each
+variable combination. Significant differences were found between the two
+countries. Bayesian networks were then fitted to each country's data,
+resulting in unique sets of Bayesian network parameters for each.
+
+The study found that worldview is a dominant influence on climate
+beliefs and that providing consensus information increases the
+perception of consensus. Among U.S. participants, the consensus
+intervention led to increased distrust in scientists among those with a
+particular worldview when informed about the scientific consensus.
+
+A limitation of the study is the small effect sizes of the experimental
+manipulation compared to the large effect of worldview, which may be due
+to the brief nature of the manipulation.
 
 ### 4) Quantifying and predicting the Water-Energy-Food-Economy-Society- Environment Nexus based on Bayesian networks - A case study of China
 
@@ -98,15 +129,20 @@ Ref : @CHAI2020120266
 
 This paper is about...
 
-### 5) ...
+### 5) Applications of Bayesian networks and Petri nets in safety, reliability, and risk assessments: A review
 
-Authors:
+Authors: S. Kabir, Y. Papadopoulos
 
-Date:
+Date: 2019
 
-Ref :
+Ref : @KABIR2019154
 
-This paper is
+This paper is a review of how to prevent risk by controlling the
+paremeter of reliability and risk assessments in complex systems by
+using bayesian networks and petri nets. Even if half of the paper will
+be on petri nets, it's interesting to see the link between those two
+methods. We can also mention the use of markov chain to do the same
+surveillance.
 
 ### Related work
 
@@ -124,32 +160,88 @@ This paper is
 
 A study was conducted to determine how...
 
-```{r, warning=FALSE, echo=T, message=FALSE}
+```{r, warning=FALSE, echo=F, message=FALSE}
 # loading packages 
 library(tidyverse)
 library(knitr)
 library(ggthemes)
 library(ggrepel)
 library(dslabs)
+library(bnlearn)
 ```
 
+### Loading the data
+
 ```{r, warning=FALSE, echo=TRUE}
-# Load Data
-kable(head(murders))
+asia<- bnlearn::asia
+```
 
-ggplot1 = murders %>% ggplot(mapping = aes(x=population/10^6, y=total)) 
+### Writing the model
 
-  ggplot1 + geom_point(aes(col=region), size = 4) +
-  geom_text_repel(aes(label=abb)) +
-  scale_x_log10() +
-  scale_y_log10() +
-  geom_smooth(formula = "y~x", method=lm,se = F)+
-  xlab("Populations in millions (log10 scale)") + 
-  ylab("Total number of murders (log10 scale)") +
-  ggtitle("US Gun Murders in 2010") +
-  scale_color_discrete(name = "Region")+
-      theme_bw()
-  
+Rearanging the data and plotting the relationship between the
+parameters.
+
+```{r}
+colnames(asia) <- c("VisittoAsia","Smoking","Tuberculosis","LungCancer","Bronchitis", "TuberculosisCersusLungCancer_Bronchitis",
+                      "ChestXray","Dyspnoea")
+
+bn_df <- data.frame(asia)
+res <- hc(bn_df)
+plot(res)
+```
+
+### Rewrite the model and plot it
+
+We will rewrite the model with new informations we have. And we will
+plot again the results.
+
+```{r}
+res = model2network("[VisittoAsia][Smoking][Tuberculosis|VisittoAsia][LungCancer|Smoking][Bronchitis|Smoking][Dyspnoea|Bronchitis:TuberculosisCersusLungCancer_Bronchitis][TuberculosisCersusLungCancer_Bronchitis|Tuberculosis:LungCancer][ChestXray|TuberculosisCersusLungCancer_Bronchitis]")
+
+#res <- hc(bn_df)
+plot(res)
+```
+
+Visit to asia is alone, means that there is nothing pointed to it. Same
+for Smoking because it's only a parent node.
+
+Tuberculosis\|VisittoAsia means that Tuberculosis is influenced by visit
+to asia.
+
+etc .. etc...
+
+### Fit the model to our data
+
+Now we will fit the model we have to our data
+
+```{r}
+fittedbn <- bn.fit(res, data = bn_df)
+
+graphviz.chart(
+  fittedbn,
+  type = "barprob" ,
+  layout = "fdp",
+  scale = c(0.75, 0.9),
+  grid = TRUE,
+  bar.col = "red",
+  strip.bg = "lightskyblue"
+)
+```
+
+```{r}
+fittedbn <- bn.fit(res, data = bn_df)
+
+print(fittedbn$Tuberculosis)
+print(fittedbn$TuberculosisCersusLungCancer_Bronchitis)
+```
+
+```{r}
+cpquery(fittedbn, event = (Smoking=="yes"), evidence = (Bronchitis=="no"))
+print(fittedbn$Tuberculosis)
+fittedbn[["Bronchitis"]]
+```
+
+```{r}
 
 ```
 

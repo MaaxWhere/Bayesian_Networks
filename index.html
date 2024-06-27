@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Maxime MARTIN">
-<meta name="dcterms.date" content="2024-06-25">
+<meta name="dcterms.date" content="2024-06-27">
 
 <title>Bayesian Network - Data Science Capstone</title>
 <style>
@@ -3114,7 +3114,7 @@ vertical-align: -.125em;
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 25, 2024</p>
+      <p class="date">June 27, 2024</p>
     </div>
   </div>
   
@@ -3158,7 +3158,7 @@ vertical-align: -.125em;
 <p>A limitation of the study is the small effect sizes of the experimental manipulation compared to the large effect of worldview, which may be due to the brief nature of the manipulation.</p>
 </section>
 <section id="quantifying-and-predicting-the-water-energy-food-economy-society--environment-nexus-based-on-bayesian-networks---a-case-study-of-china" class="level3">
-<h3 class="anchored" data-anchor-id="quantifying-and-predicting-the-water-energy-food-economy-society--environment-nexus-based-on-bayesian-networks---a-case-study-of-china">4) Quantifying and predicting the Water-Energy-Food-Economy-Society- Environment Nexus based on Bayesian networks - A case study of China</h3>
+<h3 class="anchored" data-anchor-id="quantifying-and-predicting-the-water-energy-food-economy-society--environment-nexus-based-on-bayesian-networks---a-case-study-of-china">4) *** Quantifying and predicting the Water-Energy-Food-Economy-Society- Environment Nexus based on Bayesian networks - A case study of China</h3>
 <p>Authors: J. Chai, H. Shi, Q. Lu, Y. Hu</p>
 <p>Date: 2020</p>
 <p>Ref : <span class="citation" data-cites="CHAI2020120266">Chai et al. (<a href="#ref-CHAI2020120266" role="doc-biblioref">2020</a>)</span></p>
@@ -3169,7 +3169,13 @@ vertical-align: -.125em;
 <p>Authors: S. Kabir, Y. Papadopoulos</p>
 <p>Date: 2019</p>
 <p>Ref : <span class="citation" data-cites="KABIR2019154">Kabir and Papadopoulos (<a href="#ref-KABIR2019154" role="doc-biblioref">2019</a>)</span></p>
-<p>This paper is a review of how to prevent risk by controlling the paremeter of reliability and risk assessments in complex systems by using bayesian networks and petri nets. Even if half of the paper will be on petri nets, it’s interesting to see the link between those two methods. We can also mention the use of markov chain to do the same surveillance.</p>
+<p>This paper is a review of how to prevent risk by controlling the parameter of reliability and risk assessments in complex systems by using Bayesian networks and Petri nets. Even if half of the paper will be on petri nets, it’s interesting to see the link between those two methods. We can also mention the use of markov chain to do the same surveillance. It also explain the links between other methods to Bayesian networks, for example how to go from a fault tree to a Bayesian network (the mapping process).</p>
+<p>It’s re-explaining the advantages of Bayesian networks and why using them in a problem related to safety and risk assessment. The main advantage of Bayesian networks over the other existing approaches is their polyvalency, they can offer different functionality such as predictive and diagnostic analysis model, updating, and optimization. Also, Bayesian network can applied both discrete and continuous model of time.</p>
+<p>They also explain the process of creation of a Bayesian network, following these steps:</p>
+<p>I. Identify variables -&gt; identify network structure -&gt; Express as statistical variables</p>
+<p>II. Specify conditional probabilities</p>
+<p>III. Enter evidence -&gt; Propagate -&gt; Interprete results</p>
+<p>The major limitations of Bayesian network aplications are that the guideline we use to create the nodes will define the result at the end, so to ensure a coherent model we should take care of the few first steps. Also, if the parent-child relationships are not properly defined, the model can be more complex to analyse.</p>
 </section>
 <section id="related-work" class="level3">
 <h3 class="anchored" data-anchor-id="related-work">Related work</h3>
@@ -3316,7 +3322,7 @@ TuberculosisCersusLungCancer_Bronchitis no yes
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cpquery</span>(fittedbn, <span class="at">event =</span> (Smoking<span class="sc">==</span><span class="st">&quot;yes&quot;</span>), <span class="at">evidence =</span> (Bronchitis<span class="sc">==</span><span class="st">&quot;no&quot;</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.2727273</code></pre>
+<pre><code>[1] 0.2916335</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>

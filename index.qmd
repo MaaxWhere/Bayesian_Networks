@@ -119,7 +119,7 @@ A limitation of the study is the small effect sizes of the experimental
 manipulation compared to the large effect of worldview, which may be due
 to the brief nature of the manipulation.
 
-### 4) Quantifying and predicting the Water-Energy-Food-Economy-Society- Environment Nexus based on Bayesian networks - A case study of China
+### 4) \*\*\* Quantifying and predicting the Water-Energy-Food-Economy-Society- Environment Nexus based on Bayesian networks - A case study of China
 
 Authors: J. Chai, H. Shi, Q. Lu, Y. Hu
 
@@ -138,11 +138,37 @@ Date: 2019
 Ref : @KABIR2019154
 
 This paper is a review of how to prevent risk by controlling the
-paremeter of reliability and risk assessments in complex systems by
-using bayesian networks and petri nets. Even if half of the paper will
+parameter of reliability and risk assessments in complex systems by
+using Bayesian networks and Petri nets. Even if half of the paper will
 be on petri nets, it's interesting to see the link between those two
 methods. We can also mention the use of markov chain to do the same
-surveillance.
+surveillance. It also explain the links between other methods to
+Bayesian networks, for example how to go from a fault tree to a Bayesian
+network (the mapping process).
+
+It's re-explaining the advantages of Bayesian networks and why using
+them in a problem related to safety and risk assessment. The main
+advantage of Bayesian networks over the other existing approaches is
+their polyvalency, they can offer different functionality such as
+predictive and diagnostic analysis model, updating, and optimization.
+Also, Bayesian network can applied both discrete and continuous model of
+time.
+
+They also explain the process of creation of a Bayesian network,
+following these steps:
+
+I. Identify variables -\> identify network structure -\> Express as
+statistical variables
+
+II\. Specify conditional probabilities
+
+III\. Enter evidence -\> Propagate -\> Interprete results
+
+The major limitations of Bayesian network aplications are that the
+guideline we use to create the nodes will define the result at the end,
+so to ensure a coherent model we should take care of the few first
+steps. Also, if the parent-child relationships are not properly defined,
+the model can be more complex to analyse.
 
 ### Related work
 

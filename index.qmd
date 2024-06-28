@@ -127,7 +127,37 @@ Date: 2020
 
 Ref : @CHAI2020120266
 
-This paper is about...
+This paper is an application of bayesian networks into a real life
+problem in China. The complex problem is modeled from a Nexus
+inspiration where the core nexus is a vertual circle between water, food
+and energy. Then the second, peripheral nexus are climate, population
+and Trade which will feed the first core nexus. The goal of the paper is
+to model that Nexus using Bayesian networks in order to know what are
+the causal relationships and how stong they are. Then it's also possible
+to make some simulation about the future based on some study from united
+nations or other official publisher.
+
+They used an already existed Nexus with the following variables :
+
+GDP growth rate (Economy), Population growth rate (Social), Annual
+rainfall (Environmental), Water resource stock and water intake (Water),
+Energy consumption growth rate and Energy production growth rate
+(Energy), Food demand growth rate and Food production growth rate
+(Food).
+
+From "expert knowledge" they could define the relationship between the
+different variable. And then from a discretization of the data, the were
+able to fill the states created (3 states for each evidence variable).
+After modeling everything in a Bayesian network, there were able to
+answer all their question and even making forecast on the water
+withdrawal, energy demand and food demand given all the resources from
+the other variables.
+
+The limitations are that the relationships between the variables of the
+nexus are not static but dynamic, they used a classic Bayesian network
+than cannot handle dynamic relationships. And the predicted values are
+intervals and not "precised values". The precision here could be
+improved by more indicators implemented in the Nexus.
 
 ### 5) Applications of Bayesian networks and Petri nets in safety, reliability, and risk assessments: A review
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Maxime MARTIN">
-<meta name="dcterms.date" content="2024-06-27">
+<meta name="dcterms.date" content="2024-06-28">
 
 <title>Bayesian Network - Data Science Capstone</title>
 <style>
@@ -3114,7 +3114,7 @@ vertical-align: -.125em;
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 27, 2024</p>
+      <p class="date">June 28, 2024</p>
     </div>
   </div>
   
@@ -3162,7 +3162,11 @@ vertical-align: -.125em;
 <p>Authors: J. Chai, H. Shi, Q. Lu, Y. Hu</p>
 <p>Date: 2020</p>
 <p>Ref : <span class="citation" data-cites="CHAI2020120266">Chai et al. (<a href="#ref-CHAI2020120266" role="doc-biblioref">2020</a>)</span></p>
-<p>This paper is about…</p>
+<p>This paper is an application of bayesian networks into a real life problem in China. The complex problem is modeled from a Nexus inspiration where the core nexus is a vertual circle between water, food and energy. Then the second, peripheral nexus are climate, population and Trade which will feed the first core nexus. The goal of the paper is to model that Nexus using Bayesian networks in order to know what are the causal relationships and how stong they are. Then it’s also possible to make some simulation about the future based on some study from united nations or other official publisher.</p>
+<p>They used an already existed Nexus with the following variables :</p>
+<p>GDP growth rate (Economy), Population growth rate (Social), Annual rainfall (Environmental), Water resource stock and water intake (Water), Energy consumption growth rate and Energy production growth rate (Energy), Food demand growth rate and Food production growth rate (Food).</p>
+<p>From “expert knowledge” they could define the relationship between the different variable. And then from a discretization of the data, the were able to fill the states created (3 states for each evidence variable). After modeling everything in a Bayesian network, there were able to answer all their question and even making forecast on the water withdrawal, energy demand and food demand given all the resources from the other variables.</p>
+<p>The limitations are that the relationships between the variables of the nexus are not static but dynamic, they used a classic Bayesian network than cannot handle dynamic relationships. And the predicted values are intervals and not “precised values”. The precision here could be improved by more indicators implemented in the Nexus.</p>
 </section>
 <section id="applications-of-bayesian-networks-and-petri-nets-in-safety-reliability-and-risk-assessments-a-review" class="level3">
 <h3 class="anchored" data-anchor-id="applications-of-bayesian-networks-and-petri-nets-in-safety-reliability-and-risk-assessments-a-review">5) Applications of Bayesian networks and Petri nets in safety, reliability, and risk assessments: A review</h3>
@@ -3322,7 +3326,7 @@ TuberculosisCersusLungCancer_Bronchitis no yes
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cpquery</span>(fittedbn, <span class="at">event =</span> (Smoking<span class="sc">==</span><span class="st">&quot;yes&quot;</span>), <span class="at">evidence =</span> (Bronchitis<span class="sc">==</span><span class="st">&quot;no&quot;</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.2916335</code></pre>
+<pre><code>[1] 0.3015742</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
